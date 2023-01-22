@@ -52,6 +52,20 @@ abstract class WC_Legacy_Cart {
 	public $coupon_applied_count = array();
 
 	/**
+	 * Calculated coupon totals.
+	 *
+	 * @var array
+	 */
+	public $coupon_discount_totals = array();
+
+	/**
+	 * Calculated coupon tax totals.
+	 *
+	 * @var array
+	 */
+	public $coupon_discount_tax_totals = array();
+
+	/**
 	 * Map legacy variables.
 	 *
 	 * @param string $name Property name.

@@ -13,6 +13,8 @@ namespace Automattic\WooCommerce\Database\Migrations;
  */
 abstract class MetaToMetaTableMigrator extends TableMigrator {
 
+	use WooCommerceTableMigratorTrait;
+
 	/**
 	 * Schema config, see __construct for more details.
 	 *

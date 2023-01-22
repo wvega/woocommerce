@@ -13,6 +13,8 @@ namespace Automattic\WooCommerce\Database\Migrations;
  */
 abstract class MetaToCustomTableMigrator extends TableMigrator {
 
+	use WooCommerceTableMigratorTrait;
+
 	/**
 	 * Config for tables being migrated and migrated from. See __construct() for detailed config.
 	 *

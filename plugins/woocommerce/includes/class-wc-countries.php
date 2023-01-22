@@ -28,6 +28,13 @@ class WC_Countries {
 	public $address_formats = array();
 
 	/**
+	 * List of country names indexed by country codes.
+	 *
+	 * @var array|null
+	 */
+	protected $countries_by_code = null;
+
+	/**
 	 * Auto-load in-accessible properties on demand.
 	 *
 	 * @param  mixed $key Key.
@@ -47,14 +54,14 @@ class WC_Countries {
 	 * @return array
 	 */
 	public function get_countries() {
-		if ( empty( $this->countries ) ) {
-			$this->countries = apply_filters( 'woocommerce_countries', include WC()->plugin_path() . '/i18n/countries.php' );
+		if ( is_null( $this->countries_by_code ) ) {
+			$this->countries_by_code = apply_filters( 'woocommerce_countries', include WC()->plugin_path() . '/i18n/countries.php' );
 			if ( apply_filters( 'woocommerce_sort_countries', true ) ) {
-				wc_asort_by_locale( $this->countries );
+				wc_asort_by_locale( $this->countries_by_code );
 			}
 		}
 
-		return $this->countries;
+		return $this->countries_by_code;
 	}
 
 	/**

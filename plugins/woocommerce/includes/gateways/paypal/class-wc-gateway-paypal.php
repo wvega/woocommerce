@@ -22,6 +22,41 @@ if ( ! defined( 'ABSPATH' ) ) {
 class WC_Gateway_Paypal extends WC_Payment_Gateway {
 
 	/**
+	 * The PayPal email address
+	 *
+	 * @var string
+	 */
+	public $email = '';
+
+	/**
+	 * The PayPal receiver email address
+	 *
+	 * @var string
+	 */
+	public $receiver_email = '';
+
+	/**
+	 * The PayPal identity token
+	 *
+	 * @var string
+	 */
+	public $identity_token = '';
+
+	/**
+	 * Whether PayPal sandbox is enabled or not
+	 *
+	 * @var bool
+	 */
+	public $testmode = false;
+
+	/**
+	 * Whether debug log is enabled or not
+	 *
+	 * @var bool
+	 */
+	public $debug = false;
+
+	/**
 	 * Whether or not logging is enabled
 	 *
 	 * @var bool
